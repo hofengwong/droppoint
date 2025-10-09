@@ -126,7 +126,7 @@ const useDropboxProvider = () => {
                 },
                 body: new URLSearchParams({
                     "code": code,
-                    "redirect_uri": "http://localhost:3000",
+                    "redirect_uri": process.env.NEXT_PUBLIC_SITE_URL,
                     "grant_type": "authorization_code",
                     "client_id": appKey,
                     "client_secret": appSecret,

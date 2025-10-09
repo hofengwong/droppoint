@@ -2,7 +2,7 @@ export const msalConfig: any = {
   auth: {
     clientId: process.env.NEXT_PUBLIC_AZURE_CLIENT_ID,
     authority: "https://login.microsoftonline.com/common", // + process.env.NEXT_PUBLIC_AZURE_TENANT_ID,
-    redirectUri: "http://localhost:3000",
+    redirectUri: process.env.NEXT_PUBLIC_SITE_URL,
   },
   cache: {
     cacheLocation: "localStorage",
