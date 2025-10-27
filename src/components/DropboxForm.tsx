@@ -10,7 +10,7 @@ const DropboxForm = () => {
         appKey
     } = useDropboxProvider();
     const [isAuthenticated, setIsAuthenticated] = useAtom(isAuthenticatedAtom);
-    const authenticationUrl = `https://www.dropbox.com/oauth2/authorize?client_id=${appKey}&response_type=code&token_access_type=offline&force_reauthentication=false&redirect_uri=${window.location.origin}`;
+    const authenticationUrl = `https://www.dropbox.com/oauth2/authorize?client_id=${appKey}&response_type=code&token_access_type=offline&force_reauthentication=true&redirect_uri=${window.location.origin}`;
 
     return <>
         <div className="bg-zinc-100 p-8 flex flex-col gap-4 w-full">

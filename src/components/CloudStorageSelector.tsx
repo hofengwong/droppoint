@@ -1,7 +1,7 @@
 import {currentProviderAtom, isAuthenticatedAtom} from "@/store/fileManagerAtoms";
 import {useAtom, useSetAtom} from "jotai";
 
-export default function CloudStorage() {
+export default function CloudStorageSelector() {
     const [currentProvider, setCurrentProvider] = useAtom(currentProviderAtom);
     const setIsAuthenticated = useSetAtom(isAuthenticatedAtom);
     return <>
@@ -9,15 +9,19 @@ export default function CloudStorage() {
             <h1 className="text-sm uppercase tracking-widest font-bold">Cloud storage provider</h1>
 
             <div className="flex flex-row gap-4">
-                <img src="/images/sharepoint-logo.png" className="w-28 object-contain cursor-pointer"
+                <button className={`cursor-pointer font-extrabold uppercase tracking-widest bg-gray-200 p-4 text-sm ${currentProvider === "sharepoint" ? "border-4 border-black" : ""}`}
                      onClick={() => {
                          setCurrentProvider("sharepoint");
                          setIsAuthenticated(true);
                      }}
-                />
-                <img src="/images/dropbox-logo.png" className="w-24 object-contain cursor-pointer"
+                >
+                    SharePoint
+                </button>
+                <button className={`bg-gray-200 p-4 cursor-pointer font-extrabold uppercase tracking-widest text-sm ${currentProvider === "dropbox" ? "border-4 border-black" : ""}`}
                      onClick={() => setCurrentProvider("dropbox")}
-                />
+                >
+                    Dropbox
+                </button>
             </div>
         </div>
     </>

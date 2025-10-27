@@ -16,7 +16,7 @@ import DropboxForm from "@/components/DropboxForm";
 import SharepointForm from "@/components/SharepointForm";
 import Debug from "@/components/Debug";
 import AuthenticationScreen from "@/components/AuthenticationScreen";
-import CloudStorage from "@/components/CloudStorage";
+import CloudStorageSelector from "@/components/CloudStorageSelector";
 
 export default function Home() {
     const [isAuthenticated, setIsAuthenticated] = useAtom(isAuthenticatedAtom);
@@ -75,7 +75,7 @@ export default function Home() {
 
             <main className="flex flex-col items-center mx-auto justify-between p-24 w-[800px]">
 
-                <CloudStorage />
+                <CloudStorageSelector />
 
                 {settingsForm}
 
